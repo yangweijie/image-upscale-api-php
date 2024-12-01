@@ -144,27 +144,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             
             try {
-                // 使用ImageMagick处理图片
-                $image = new Imagick($output_path);
-                
-                // 设置采样器和滤镜以获得更好的缩放质量
-                $image->setImageCompressionQuality(100);
-                $image->setOption('filter:support', '2.0');
-                $image->setImageFilter(Imagick::FILTER_LANCZOS);
-                
-                // 调整图片大小
-                $image->resizeImage($targetWidth, $targetHeight, Imagick::FILTER_LANCZOS, 1);
-                
-                // 保存图片
-                $image->writeImage($output_path);
-                
-                // 清理资源
-                $image->clear();
-                $image->destroy();
-                
-                writeLog("Image resized to {$scale}x using ImageMagick", 'INFO');
-            } catch (ImagickException $e) {
-                sendError('Failed to process image with ImageMagick: ' . $e->getMessage(), 500);
+                if (extension_loaded('imagick')) {
+                    // 使用ImageMagick处理图片
+                    $image = new Imagick($output_path);
+                    
+                    // 设置采样器和滤镜以获得更好的缩放质量
+                    $image->setImageCompressionQuality(100);
+                    $image->setOption('filter:support', '2.0');
+                    $image->setImageFilter(Imagick::FILTER_LANCZOS);
+                    
+                    // 调整图片大小
+                    $image->resizeImage($targetWidth, $targetHeight, Imagick::FILTER_LANCZOS, 1);
+                    
+                    // 保存图片
+                    $image->writeImage($output_path);
+                    
+                    // 清理资源
+                    $image->clear();
+                    $image->destroy();
+                    
+                    writeLog("Image resized to {$scale}x using ImageMagick", 'INFO');
+                } else {
+                    // 使用GD库作为备选方案
+                    writeLog("ImageMagick not available, falling back to GD library", 'INFO');
+                    
+                    $image = imagecreatefrompng($output_path);
+                    if ($image === false) {
+                        sendError('Failed to load upscaled image', 500);
+                    }
+                    
+                    // 创建新的图片并调整大小
+                    $resized = imagecreatetruecolor($targetWidth, $targetHeight);
+                    if ($resized === false) {
+                        sendError('Failed to create resized image', 500);
+                    }
+                    
+                    // 保持透明度
+                    imagealphablending($resized, false);
+                    imagesavealpha($resized, true);
+                    
+                    // 调整大小
+                    if (!imagecopyresampled($resized, $image, 0, 0, 0, 0, $targetWidth, $targetHeight, imagesx($image), imagesy($image))) {
+                        sendError('Failed to resize image', 500);
+                    }
+                    
+                    // 保存调整后的图片
+                    if (!imagepng($resized, $output_path)) {
+                        sendError('Failed to save resized image', 500);
+                    }
+                    
+                    // 清理资源
+                    imagedestroy($image);
+                    imagedestroy($resized);
+                    
+                    writeLog("Image resized to {$scale}x using GD Library", 'INFO');
+                }
+            } catch (Exception $e) {
+                sendError('Failed to process image: ' . $e->getMessage(), 500);
             }
         }
         $processTime = round(microtime(true) - $startProcessTime, 2);
