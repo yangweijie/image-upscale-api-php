@@ -47,6 +47,38 @@ http://localhost/swagger-ui.html
 }
 ```
 
+## 环境要求
+
+### Windows
+- PHP 7.4 或更高版本
+- ImageMagick 扩展（可选）
+- Vulkan 支持的显卡驱动
+
+### Ubuntu
+在 Ubuntu 系统上，需要安装额外的依赖。运行以下命令：
+
+```bash
+# 给安装脚本添加执行权限
+chmod +x setup_ubuntu.sh
+
+# 运行安装脚本
+./setup_ubuntu.sh
+```
+
+或者手动安装依赖：
+```bash
+sudo apt-get update
+sudo apt-get install -y libvulkan1 vulkan-tools mesa-vulkan-drivers vulkan-validationlayers
+```
+
+### 验证安装
+运行以下命令验证 Vulkan 是否正确安装：
+```bash
+vulkaninfo
+```
+
+如果看到 Vulkan 相关信息输出，说明安装成功。
+
 ## 注意事项
 
 1. 图片放大处理可能需要较长时间，特别是对于大图片或高倍数放大
