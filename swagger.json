@@ -1,0 +1,131 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Image Upscale API",
+    "description": "使用Real-ESRGAN进行图片无损放大的API服务",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "本地服务器"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "首页",
+        "description": "返回API欢迎信息",
+        "responses": {
+          "200": {
+            "description": "成功响应",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Welcome to Image Upscale API"
+                    },
+                    "version": {
+                      "type": "string",
+                      "example": "1.0.0"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/upscale": {
+      "post": {
+        "summary": "图片放大",
+        "description": "上传图片并进行无损放大处理",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "要处理的图片文件（支持JPG和PNG）"
+                  },
+                  "scale": {
+                    "type": "integer",
+                    "enum": [2, 3, 4],
+                    "default": 4,
+                    "description": "放大倍数"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "处理成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image_base64": {
+                      "type": "string",
+                      "description": "Base64编码的处理后图片"
+                    },
+                    "image_type": {
+                      "type": "string",
+                      "example": "image/png"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Image upscaled successfully"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "请求错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Invalid file type. Only JPG and PNG are allowed."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "服务器错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Failed to process image"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+[2024-12-01 15:18:36][INFO][127.0.0.1] Received new upscale request
+[2024-12-01 15:18:36][INFO][127.0.0.1] Processing with scale: 3x
+[2024-12-01 15:18:36][INFO][127.0.0.1] Uploaded file details - Name: 头条头像.jpg, Size: 0.02MB, Type: image/jpeg
+[2024-12-01 15:18:36][DEBUG][127.0.0.1] Created temporary files - Input: C:\Users\jay\AppData\Local\Temp\upsA9E0.tmp.png, Output: C:\Users\jay\AppData\Local\Temp\upsA9F1.tmp.png
+[2024-12-01 15:18:36][DEBUG][127.0.0.1] Successfully moved uploaded file to temporary location
+[2024-12-01 15:18:36][DEBUG][127.0.0.1] Using executable: ./realesrgan-ncnn-vulkan.exe
+[2024-12-01 15:18:36][DEBUG][127.0.0.1] Executing command: "./realesrgan-ncnn-vulkan.exe" -i "C:\Users\jay\AppData\Local\Temp\upsA9E0.tmp.png" -o "C:\Users\jay\AppData\Local\Temp\upsA9F1.tmp.png" -s 3 -n realesrnet-x4plus
+[2024-12-01 15:18:36][INFO][127.0.0.1] Command execution time: 0.08 seconds
+[2024-12-01 15:18:36][DEBUG][127.0.0.1] Command output: invalid scale argument
+[2024-12-01 15:18:36][DEBUG][127.0.0.1] Command return code: -1
+[2024-12-01 15:18:36][ERROR][127.0.0.1] Failed to process image: invalid scale argument
+[2024-12-01 15:18:44][INFO][127.0.0.1] Received new upscale request
+[2024-12-01 15:18:44][INFO][127.0.0.1] Processing with scale: 2x
+[2024-12-01 15:18:44][INFO][127.0.0.1] Uploaded file details - Name: 头条头像.jpg, Size: 0.02MB, Type: image/jpeg
+[2024-12-01 15:18:44][DEBUG][127.0.0.1] Created temporary files - Input: C:\Users\jay\AppData\Local\Temp\upsC8B6.tmp.png, Output: C:\Users\jay\AppData\Local\Temp\upsC8B7.tmp.png
+[2024-12-01 15:18:44][DEBUG][127.0.0.1] Successfully moved uploaded file to temporary location
+[2024-12-01 15:18:44][DEBUG][127.0.0.1] Using executable: ./realesrgan-ncnn-vulkan.exe
+[2024-12-01 15:18:44][DEBUG][127.0.0.1] Executing command: "./realesrgan-ncnn-vulkan.exe" -i "C:\Users\jay\AppData\Local\Temp\upsC8B6.tmp.png" -o "C:\Users\jay\AppData\Local\Temp\upsC8B7.tmp.png" -s 2 -n realesrnet-x4plus
+[2024-12-01 15:18:44][INFO][127.0.0.1] Command execution time: 0.09 seconds
+[2024-12-01 15:18:44][DEBUG][127.0.0.1] Command output: invalid scale argument
+[2024-12-01 15:18:44][DEBUG][127.0.0.1] Command return code: -1
+[2024-12-01 15:18:44][ERROR][127.0.0.1] Failed to process image: invalid scale argument
+[2024-12-01 15:27:37][INFO][127.0.0.1] Received new upscale request
+[2024-12-01 15:27:37][INFO][127.0.0.1] Processing with scale: 2x
+[2024-12-01 15:27:37][INFO][127.0.0.1] Uploaded file details - Name: 头条头像.jpg, Size: 0.02MB, Type: image/jpeg
+[2024-12-01 15:27:37][DEBUG][127.0.0.1] Created temporary files - Input: C:\Users\jay\AppData\Local\Temp\upsEA90.tmp.png, Output: C:\Users\jay\AppData\Local\Temp\upsEA91.tmp.png
+[2024-12-01 15:27:37][DEBUG][127.0.0.1] Successfully moved uploaded file to temporary location
+[2024-12-01 15:27:37][DEBUG][127.0.0.1] Using executable: ./realesrgan-ncnn-vulkan.exe
+[2024-12-01 15:27:37][DEBUG][127.0.0.1] Executing command: "./realesrgan-ncnn-vulkan.exe" -i "C:\Users\jay\AppData\Local\Temp\upsEA90.tmp.png" -o "C:\Users\jay\AppData\Local\Temp\upsEA91.tmp.png" -n realesrnet-x4plus
+[2024-12-01 15:27:43][INFO][127.0.0.1] Image resized from 4x to 2x
+[2024-12-01 15:27:43][INFO][127.0.0.1] Command execution time: 5.69 seconds
+[2024-12-01 15:27:43][DEBUG][127.0.0.1] Command output: [0 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[0 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[0 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[0 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+[1 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[1 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[1 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[1 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+[2 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[2 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[2 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[2 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+0.00%
+[2024-12-01 15:27:43][DEBUG][127.0.0.1] Command return code: 0
+[2024-12-01 15:27:43][INFO][127.0.0.1] Successfully processed image. Output size: 0.06MB
+[2024-12-01 15:27:43][INFO][127.0.0.1] Total processing time: 5.71 seconds
+[2024-12-01 15:27:43][INFO][127.0.0.1] Response sent successfully
+[2024-12-01 15:27:43][DEBUG][127.0.0.1] Cleaned up input file: C:\Users\jay\AppData\Local\Temp\upsEA90.tmp.png
+[2024-12-01 15:27:43][DEBUG][127.0.0.1] Cleaned up output file: C:\Users\jay\AppData\Local\Temp\upsEA91.tmp.png
+[2024-12-01 15:27:49][INFO][127.0.0.1] Received new upscale request
+[2024-12-01 15:27:49][INFO][127.0.0.1] Processing with scale: 2x
+[2024-12-01 15:27:49][INFO][127.0.0.1] Uploaded file details - Name: 头条头像.jpg, Size: 0.02MB, Type: image/jpeg
+[2024-12-01 15:27:49][DEBUG][127.0.0.1] Created temporary files - Input: C:\Users\jay\AppData\Local\Temp\ups1944.tmp.png, Output: C:\Users\jay\AppData\Local\Temp\ups1945.tmp.png
+[2024-12-01 15:27:49][DEBUG][127.0.0.1] Successfully moved uploaded file to temporary location
+[2024-12-01 15:27:49][DEBUG][127.0.0.1] Using executable: ./realesrgan-ncnn-vulkan.exe
+[2024-12-01 15:27:49][DEBUG][127.0.0.1] Executing command: "./realesrgan-ncnn-vulkan.exe" -i "C:\Users\jay\AppData\Local\Temp\ups1944.tmp.png" -o "C:\Users\jay\AppData\Local\Temp\ups1945.tmp.png" -n realesrnet-x4plus
+[2024-12-01 15:27:54][INFO][127.0.0.1] Image resized from 4x to 2x
+[2024-12-01 15:27:54][INFO][127.0.0.1] Command execution time: 5.41 seconds
+[2024-12-01 15:27:54][DEBUG][127.0.0.1] Command output: [0 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[0 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[0 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[0 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+[1 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[1 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[1 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[1 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+[2 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[2 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[2 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[2 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+0.00%
+[2024-12-01 15:27:54][DEBUG][127.0.0.1] Command return code: 0
+[2024-12-01 15:27:54][INFO][127.0.0.1] Successfully processed image. Output size: 0.06MB
+[2024-12-01 15:27:54][INFO][127.0.0.1] Total processing time: 5.42 seconds
+[2024-12-01 15:27:54][INFO][127.0.0.1] Response sent successfully
+[2024-12-01 15:27:54][DEBUG][127.0.0.1] Cleaned up input file: C:\Users\jay\AppData\Local\Temp\ups1944.tmp.png
+[2024-12-01 15:27:54][DEBUG][127.0.0.1] Cleaned up output file: C:\Users\jay\AppData\Local\Temp\ups1945.tmp.png
+[2024-12-01 15:31:12][INFO][127.0.0.1] Received GET request: /files/test_files/file_none
+[2024-12-01 15:31:20][INFO][127.0.0.1] Received new upscale request
+[2024-12-01 15:31:20][INFO][127.0.0.1] Processing with scale: 16x
+[2024-12-01 15:31:20][INFO][127.0.0.1] Uploaded file details - Name: 头条头像.jpg, Size: 0.02MB, Type: image/jpeg
+[2024-12-01 15:31:20][DEBUG][127.0.0.1] Created temporary files - Input: C:\Users\jay\AppData\Local\Temp\ups52E6.tmp.png, Output: C:\Users\jay\AppData\Local\Temp\ups52F7.tmp.png
+[2024-12-01 15:31:20][DEBUG][127.0.0.1] Successfully moved uploaded file to temporary location
+[2024-12-01 15:31:20][DEBUG][127.0.0.1] Using executable: ./realesrgan-ncnn-vulkan.exe
+[2024-12-01 15:31:20][DEBUG][127.0.0.1] Executing command: "./realesrgan-ncnn-vulkan.exe" -i "C:\Users\jay\AppData\Local\Temp\ups52E6.tmp.png" -o "C:\Users\jay\AppData\Local\Temp\ups52F7.tmp.png" -n realesrnet-x4plus
+[2024-12-01 15:35:28][INFO][127.0.0.1] Received GET request: /files/test_files/file_none
+[2024-12-01 15:37:01][INFO][127.0.0.1] Received GET request: /files/test_files/file_none
+[2024-12-01 15:37:07][INFO][127.0.0.1] Received new upscale request
+[2024-12-01 15:37:07][INFO][127.0.0.1] Processing with scale: 6x
+[2024-12-01 15:37:07][INFO][127.0.0.1] Uploaded file details - Name: 头条头像.jpg, Size: 0.02MB, Type: image/jpeg
+[2024-12-01 15:37:07][DEBUG][127.0.0.1] Created temporary files - Input: C:\Users\jay\AppData\Local\Temp\ups9C3F.tmp.png, Output: C:\Users\jay\AppData\Local\Temp\ups9C40.tmp.png
+[2024-12-01 15:37:07][DEBUG][127.0.0.1] Successfully moved uploaded file to temporary location
+[2024-12-01 15:37:07][DEBUG][127.0.0.1] Using executable: ./realesrgan-ncnn-vulkan.exe
+[2024-12-01 15:37:07][DEBUG][127.0.0.1] Executing command: "./realesrgan-ncnn-vulkan.exe" -i "C:\Users\jay\AppData\Local\Temp\ups9C3F.tmp.png" -o "C:\Users\jay\AppData\Local\Temp\ups9C40.tmp.png" -n realesrnet-x4plus
+[2024-12-01 15:37:54][INFO][127.0.0.1] Image resized to 6x
+[2024-12-01 15:37:54][INFO][127.0.0.1] Command execution time: 47.47 seconds
+[2024-12-01 15:37:54][DEBUG][127.0.0.1] Command output: [0 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[0 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[0 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[0 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+[1 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[1 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[1 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[1 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+[2 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[2 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[2 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[2 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+0.00%
+[0 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[0 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[0 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[0 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+[1 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[1 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=65  bugcopc=0  bugihfa=0
+[1 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[1 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+[2 Intel(R) Iris(R) Plus Graphics 655]  queueC=0[1]  queueG=0[1]  queueT=0[1]
+[2 Intel(R) Iris(R) Plus Graphics 655]  bugsbn1=0  bugbilz=0  bugcopc=0  bugihfa=0
+[2 Intel(R) Iris(R) Plus Graphics 655]  fp16-p/s/a=1/1/1  int8-p/s/a=1/1/1
+[2 Intel(R) Iris(R) Plus Graphics 655]  subgroup=32  basic=1  vote=1  ballot=1  shuffle=1
+0.00%
+25.00%
+50.00%
+75.00%
+[2024-12-01 15:37:54][DEBUG][127.0.0.1] Command return code: 0
+[2024-12-01 15:37:54][INFO][127.0.0.1] Successfully processed image. Output size: 0.33MB
+[2024-12-01 15:37:54][INFO][127.0.0.1] Total processing time: 47.49 seconds
+[2024-12-01 15:37:54][INFO][127.0.0.1] Response sent successfully
+[2024-12-01 15:37:54][DEBUG][127.0.0.1] Cleaned up input file: C:\Users\jay\AppData\Local\Temp\ups9C3F.tmp.png
+[2024-12-01 15:37:54][DEBUG][127.0.0.1] Cleaned up output file: C:\Users\jay\AppData\Local\Temp\ups9C40.tmp.png
