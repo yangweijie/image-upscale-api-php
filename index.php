@@ -148,22 +148,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // 使用ImageMagick处理图片
                     $image = new Imagick($output_path);
                     
-                    // 设置采样器和滤镜以获得更好的缩放质量
+                    // 设置图片质量
                     $image->setImageCompressionQuality(100);
-                    $image->setOption('filter:support', '2.0');
-                    $image->setImageFilter(Imagick::FILTER_LANCZOS);
                     
-                    // 调整图片大小
-                    $image->resizeImage($targetWidth, $targetHeight, Imagick::FILTER_LANCZOS, 1);
+                    // 获取 ImageMagick 版本
+                    $version = Imagick::getVersion();
+                    preg_match('/ImageMagick ([0-9]+\.[0-9]+\.[0-9]+)/', $version['versionString'], $matches);
+                    $version = isset($matches[1]) ? $matches[1] : '0.0.0';
                     
-                    // 保存图片
-                    $image->writeImage($output_path);
+                    writeLog("ImageMagick version: {$version}", 'INFO');
                     
-                    // 清理资源
-                    $image->clear();
-                    $image->destroy();
-                    
-                    writeLog("Image resized to {$scale}x using ImageMagick", 'INFO');
+                    try {
+                        // 尝试使用高级设置
+                        if (method_exists($image, 'setImageFilter')) {
+                            $image->setOption('filter:support', '2.0');
+                            $image->setImageFilter(Imagick::FILTER_LANCZOS);
+                            $image->resizeImage($targetWidth, $targetHeight, Imagick::FILTER_LANCZOS, 1);
+                        } else {
+                            // 使用基本的调整大小方法
+                            $image->resizeImage($targetWidth, $targetHeight, Imagick::FILTER_LANCZOS, 1);
+                        }
+                        
+                        // 保存图片
+                        $image->writeImage($output_path);
+                        
+                        // 清理资源
+                        $image->clear();
+                        $image->destroy();
+                        
+                        writeLog("Image resized to {$scale}x using ImageMagick", 'INFO');
+                    } catch (ImagickException $e) {
+                        writeLog("ImageMagick resize failed: " . $e->getMessage(), 'ERROR');
+                        // 如果 ImageMagick 处理失败，回退到 GD
+                        throw new Exception("ImageMagick processing failed, falling back to GD");
+                    }
                 } else {
                     // 使用GD库作为备选方案
                     writeLog("ImageMagick not available, falling back to GD library", 'INFO');
